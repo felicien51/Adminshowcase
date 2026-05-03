@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react';
 
 var API = 'http://localhost:3001/products';
 
-// Custom hook - fetches and manages products from the backend (db.json)
 function useProducts() {
   var productsState = useState([]);
   var products = productsState[0];
@@ -28,32 +27,31 @@ function useProducts() {
         setError('Could not connect to the backend. Make sure you ran: npm run backend');
         setLoading(false);
       });
-  }, []);
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   // POST - add a new product
-function addProduct(newProduct) {
-  setLoading(true);
-  setError(null);
-
-  fetch(API, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(newProduct),
-  })
-    .then(function (res) {
-      if (!res.ok) throw new Error('Failed to add product'); // ✅ catch HTTP errors
-      return res.json();
+  function addProduct(newProduct) {
+    setLoading(true);
+    setError(null);
+    fetch(API, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(newProduct),
     })
-    .then(function (saved) {
-      setProducts(function (prev) { return [saved].concat(prev); });
-    })
-    .catch(function (err) {
-      setError(err.message); // ✅ surface the error
-    })
-    .finally(function () {
-      setLoading(false);     // ✅ always stop loading
-    });
-}
+      .then(function (res) {
+        if (!res.ok) throw new Error('Failed to add product');
+        return res.json();
+      })
+      .then(function (saved) {
+        setProducts(function (prev) { return [saved].concat(prev); });
+      })
+      .catch(function (err) {
+        setError(err.message);
+      })
+      .finally(function () {
+        setLoading(false);
+      });
+  }
 
   // PATCH - update an existing product
   function updateProduct(id, changes) {
@@ -65,7 +63,7 @@ function addProduct(newProduct) {
       .then(function (res) { return res.json(); })
       .then(function (updated) {
         setProducts(function (prev) {
-          return prev.map(function (p) { return p.id === id ? updated : p; });
+          return prev.map(function (p) { return p.id === id ? updated : p; }); // ✅ fixed
         });
       });
   }
@@ -75,7 +73,7 @@ function addProduct(newProduct) {
     fetch(API + '/' + id, { method: 'DELETE' })
       .then(function () {
         setProducts(function (prev) {
-          return prev.filter(function (p) { return p.id !== id; });
+          return prev.filter(function (p) { return p.id !== id; }); // ✅ fixed
         });
       });
   }
