@@ -1,0 +1,76 @@
+.add-page {
+  max-width: 540px;
+}
+
+.add-form {
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 24px;
+}
+
+.add-form label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: bold;
+  margin-top: 14px;
+  margin-bottom: 4px;
+}
+
+.add-form label:first-of-type {
+  margin-top: 0;
+}
+
+.add-form input,
+.add-form select,
+.add-form textarea {
+  width: 100%;
+  padding: 9px 12px;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  background: #f8fafc;
+  font-family: Arial, sans-serif;
+}
+
+.add-form input:focus,
+.add-form select:focus,
+.add-form textarea:focus {
+  border-color: #3b82f6;
+  outline: none;
+  background: white;
+}
+
+.form-buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.btn-submit {
+  background: #3b82f6;
+  color: white;
+  border: none;
+  padding: 9px 18px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.btn-submit:hover {
+  background: #2563eb;
+}
+
+.btn-cancel {
+  background: white;
+  color: #475569;
+  border: 1px solid #e2e8f0;
+  padding: 9px 18px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.btn-cancel:hover {
+  background: #f1f5f9;
+}

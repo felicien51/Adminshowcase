@@ -1,0 +1,36 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Tusker Lager (Crate of 24)",
+      "price": 2800,
+      "category": "Drinks",
+      "stock": 50,
+      "description": "Classic Kenyan beer, brewed by Kenya Breweries Limited."
+    },
+    {
+      "id": 2,
+      "name": "Maasai Shuka Blanket",
+      "price": 1500,
+      "category": "Clothing",
+      "stock": 80,
+      "description": "Traditional Maasai checkered blanket, great for home or travel."
+    },
+    {
+      "id": 3,
+      "name": "Jiko Charcoal Stove",
+      "price": 650,
+      "category": "Kitchen",
+      "stock": 35,
+      "description": "Efficient Kenyan jiko stove, ideal for everyday cooking."
+    },
+    {
+      "id": 4,
+      "name": "Mitumba Sports Shoes",
+      "price": 800,
+      "category": "Footwear",
+      "stock": 60,
+      "description": "Affordable second-hand sports shoes, popular across Nairobi."
+    }
+  ]
+}
