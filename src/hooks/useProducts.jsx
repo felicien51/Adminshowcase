@@ -31,17 +31,29 @@ function useProducts() {
   }, []);
 
   // POST - add a new product
-  function addProduct(newProduct) {
-    fetch(API, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(newProduct),
+function addProduct(newProduct) {
+  setLoading(true);
+  setError(null);
+
+  fetch(API, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(newProduct),
+  })
+    .then(function (res) {
+      if (!res.ok) throw new Error('Failed to add product'); // ✅ catch HTTP errors
+      return res.json();
     })
-      .then(function (res) { return res.json(); })
-      .then(function (saved) {
-        setProducts(function (prev) { return [saved].concat(prev); });
-      });
-  }
+    .then(function (saved) {
+      setProducts(function (prev) { return [saved].concat(prev); });
+    })
+    .catch(function (err) {
+      setError(err.message); // ✅ surface the error
+    })
+    .finally(function () {
+      setLoading(false);     // ✅ always stop loading
+    });
+}
 
   // PATCH - update an existing product
   function updateProduct(id, changes) {
