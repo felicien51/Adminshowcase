@@ -1,6 +1,7 @@
 # Admin Portal — React SPA
 
 An e-commerce admin portal built with React. 
+PROJECT lINK: https://aadminshowcase.vercel.app/
 
 ## Setup
 
