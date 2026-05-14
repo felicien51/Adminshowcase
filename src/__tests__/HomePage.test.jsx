@@ -16,12 +16,12 @@ test('renders the View Products link', function () {
 
 test('renders the Add Product link', function () {
   render(<MemoryRouter><HomePage /></MemoryRouter>);
-  expect(screen.getByText(/add product/i)).toBeInTheDocument();
+  expect(screen.getByRole('link', { name: /add product/i })).toBeInTheDocument();
 });
 
 test('renders the three feature cards', function () {
   render(<MemoryRouter><HomePage /></MemoryRouter>);
   expect(screen.getByText(/manage products/i)).toBeInTheDocument();
   expect(screen.getByText(/add products/i)).toBeInTheDocument();
-  expect(screen.getByText(/search/i)).toBeInTheDocument();
+  expect(screen.getByRole('heading', { name: /search/i })).toBeInTheDocument();
 });

@@ -1,3 +1,70 @@
+/* ── Layout ─────────────────────────────────────────────── */
+.products-layout {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+}
+
+/* ── Sidebar ─────────────────────────────────────────────── */
+.filter-sidebar {
+  width: 200px;
+  flex-shrink: 0;
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 18px;
+  position: sticky;
+  top: 20px;
+}
+
+.filter-title {
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: #1e293b;
+  margin-bottom: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.filter-option {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.88rem;
+  color: #475569;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.filter-option input[type='checkbox'] {
+  accent-color: #3b82f6;
+  width: 15px;
+  height: 15px;
+  cursor: pointer;
+}
+
+.clear-filters {
+  margin-top: 12px;
+  width: 100%;
+  background: none;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  padding: 6px 0;
+  font-size: 0.82rem;
+  color: #64748b;
+  cursor: pointer;
+}
+
+.clear-filters:hover {
+  background: #f1f5f9;
+}
+
+/* ── Main content ────────────────────────────────────────── */
+.products-main {
+  flex: 1;
+  min-width: 0;
+}
+
 .count {
   color: #64748b;
   font-size: 0.9rem;
@@ -6,7 +73,7 @@
 
 .products-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 18px;
 }
 
@@ -14,4 +81,16 @@
   color: #64748b;
   text-align: center;
   padding: 30px 0;
+}
+
+/* ── Responsive ──────────────────────────────────────────── */
+@media (max-width: 640px) {
+  .products-layout {
+    flex-direction: column;
+  }
+
+  .filter-sidebar {
+    width: 100%;
+    position: static;
+  }
 }
