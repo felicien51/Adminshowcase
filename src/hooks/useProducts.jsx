@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+var API = import.meta.env.VITE_API_URL || 'http://localhost:3001/products';
 
 var API = 'http://localhost:3001/products';
 
