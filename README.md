@@ -2,7 +2,7 @@
 
 A full-featured e-commerce admin portal built with React. Manage your store's product catalogue from one place — add new products, edit prices, track stock levels, search by name or category, and filter by category.
 
-🔗 **Live Demo:** [https://aadminshowcase.vercel.app](https://aadminshowcase.vercel.app)
+🔗 **Live Demo:** [https://adminshowcaseee.vercel.app](https://adminshowcaseee.vercel.app)
 
 ---
 
@@ -14,7 +14,7 @@ A full-featured e-commerce admin portal built with React. Manage your store's pr
 - 🗑️ Delete products with a confirmation prompt
 - 🔍 Search products in real time by name or category
 - 🗂️ Filter products by category using a sidebar with checkboxes
-- 🔄 Full CRUD via a local JSON backend (json-server)
+- 🔄 Full CRUD via json-server backend hosted on Render
 
 ---
 
@@ -25,7 +25,7 @@ A full-featured e-commerce admin portal built with React. Manage your store's pr
 | UI | React 18 |
 | Routing | React Router v5 |
 | State & Data | Custom hook (`useProducts`) |
-| Backend | json-server (local) |
+| Backend | json-server hosted on Render |
 | Build Tool | Vite |
 | Testing | Vitest + React Testing Library |
 
@@ -48,7 +48,7 @@ npm install
 
 ### 3. Start the backend
 
-Runs json-server on `http://localhost:3001`:
+Runs json-server locally on `http://localhost:3001` (the live deployment uses Render):
 
 ```bash
 npm run backend
